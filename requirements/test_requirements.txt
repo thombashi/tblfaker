@@ -1,3 +1,4 @@
 pytablewriter>=0.38
 pytest
+six
 tox

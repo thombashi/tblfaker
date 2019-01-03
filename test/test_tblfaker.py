@@ -3,6 +3,7 @@
 from __future__ import print_function, unicode_literals
 
 import pytest
+import six  # noqa
 from pytablewriter import dump_tabledata
 from tabledata import TableData
 from tblfaker import TableFaker
@@ -14,6 +15,7 @@ dump_opts = {"line_break_handling": "escape"}
 
 
 class Test_TableFaker_generate(object):
+    @pytest.mark.skipif("six.PY2")
     @pytest.mark.parametrize(
         ["provider_list", "rows", "table_name", "expected"],
         [
@@ -74,6 +76,7 @@ class Test_TableFaker_generate(object):
         assert expected_table == out_table
         assert out == expected
 
+    @pytest.mark.skipif("six.PY2")
     def test_normal_locale(self):
         faker = TableFaker(locale="ja_JP", seed=1)
         out = faker.generate(("name", "address"), rows=2)
