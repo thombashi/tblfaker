@@ -5,17 +5,23 @@
 
 .. image:: https://badge.fury.io/py/tblfaker.svg
     :target: https://badge.fury.io/py/tblfaker
+    :alt: PyPI package version
 
 .. image:: https://img.shields.io/pypi/pyversions/tblfaker.svg
     :target: https://pypi.org/project/tblfaker
+    :alt: Supported Python versions
 
 .. image:: https://img.shields.io/travis/thombashi/tblfaker/master.svg?label=Linux/macOS-CI
     :target: https://travis-ci.org/thombashi/tblfaker
-    :alt: Linux CI test status
+    :alt: Linux/macOS CI status
 
 .. image:: https://img.shields.io/appveyor/ci/thombashi/tblfaker/master.svg?label=Windows-CI
     :target: https://ci.appveyor.com/project/thombashi/tblfaker/branch/master
-    :alt: Windows CI test status
+    :alt: Windows CI status
+
+.. image:: https://coveralls.io/repos/github/thombashi/tblfaker/badge.svg?branch=master
+    :target: https://coveralls.io/github/thombashi/tblfaker?branch=master
+    :alt: Test coverage
 
 
 Summary
@@ -120,11 +126,11 @@ Set Locale
         Row(name='宇野 くみ子', address='宮城県八街市西浅草20丁目24番6号')
 
 
-Output with Other Formts
+Output with Other Data Formats
 --------------------------------------------
 
 JSON
---------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :Sample Code:
     .. code-block:: python
 
@@ -152,8 +158,7 @@ JSON
         }
 
 pandas dataframe
---------------------------------------------
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :Sample Code:
     .. code-block:: python
 
