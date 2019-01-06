@@ -15,7 +15,7 @@ class TableFaker(object):
         if seed:
             self.__fake.seed(seed)
 
-    def generate(self, provider_list, rows, table_name=None):
+    def generate(self, provider_list, rows, table_name=None, header_list=None):
         """Generate fake data as tabular data.
 
         Args:
@@ -33,7 +33,7 @@ class TableFaker(object):
 
         return TableData(
             table_name=table_name,
-            header_list=provider_list,
+            header_list=header_list if header_list else provider_list,
             row_list=[
                 [getattr(self.__fake, faker_name)() for faker_name in provider_list]
                 for _row in range(rows)

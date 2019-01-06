@@ -77,6 +77,24 @@ class Test_TableFaker_generate(object):
         assert out == expected
 
     @pytest.mark.skipif("six.PY2")
+    def test_normal_specify_header_list(self):
+        faker = TableFaker(seed=1)
+        provider_list = ("file_name", "file_path")
+        out = faker.generate(
+            provider_list, 1, table_name="with header_list", header_list=("input", "output")
+        )
+        expected = TableData(
+            "with header_list", ("input", "output"), [("shake.wav", "/prepare/last.jpeg")]
+        )
+        out_table = dump_tabledata(out, **dump_opts)
+        expected_table = dump_tabledata(expected, **dump_opts)
+
+        print_test_result(expected=expected_table, actual=out_table)
+
+        assert expected_table == out_table
+        assert out == expected
+
+    @pytest.mark.skipif("six.PY2")
     def test_normal_locale(self):
         faker = TableFaker(locale="ja_JP", seed=1)
         out = faker.generate(("name", "address"), rows=2)
