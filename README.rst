@@ -3,6 +3,20 @@
 .. contents:: Table of Contents
    :depth: 2
 
+.. image:: https://badge.fury.io/py/tblfaker.svg
+    :target: https://badge.fury.io/py/tblfaker
+
+.. image:: https://img.shields.io/pypi/pyversions/tblfaker.svg
+    :target: https://pypi.org/project/tblfaker
+
+.. image:: https://img.shields.io/travis/thombashi/tblfaker/master.svg?label=Linux/macOS-CI
+    :target: https://travis-ci.org/thombashi/tblfaker
+    :alt: Linux CI test status
+
+.. image:: https://img.shields.io/appveyor/ci/thombashi/tblfaker/master.svg?label=Windows-CI
+    :target: https://ci.appveyor.com/project/thombashi/tblfaker/branch/master
+    :alt: Windows CI test status
+
 
 Summary
 ============================================
