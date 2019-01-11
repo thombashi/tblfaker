@@ -1,7 +1,10 @@
-**tblfaker**
-
-.. contents:: Table of Contents
+.. contents:: **tblfaker**
    :depth: 2
+
+
+Summary
+============================================
+tblfaker is a Python library to generate fake tabular data.
 
 .. image:: https://badge.fury.io/py/tblfaker.svg
     :target: https://badge.fury.io/py/tblfaker
@@ -11,22 +14,17 @@
     :target: https://pypi.org/project/tblfaker
     :alt: Supported Python versions
 
-.. image:: https://img.shields.io/travis/thombashi/tblfaker/master.svg?label=Linux/macOS-CI
+.. image:: https://img.shields.io/travis/thombashi/tblfaker/master.svg?label=Linux/macOS%20CI
     :target: https://travis-ci.org/thombashi/tblfaker
     :alt: Linux/macOS CI status
 
-.. image:: https://img.shields.io/appveyor/ci/thombashi/tblfaker/master.svg?label=Windows-CI
+.. image:: https://img.shields.io/appveyor/ci/thombashi/tblfaker/master.svg?label=Windows%20CI
     :target: https://ci.appveyor.com/project/thombashi/tblfaker/branch/master
     :alt: Windows CI status
 
 .. image:: https://coveralls.io/repos/github/thombashi/tblfaker/badge.svg?branch=master
     :target: https://coveralls.io/github/thombashi/tblfaker?branch=master
     :alt: Test coverage
-
-
-Summary
-============================================
-tblfaker is a Python library to generate fake tabular data.
 
 
 Usage
