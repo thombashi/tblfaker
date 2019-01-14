@@ -19,8 +19,12 @@ class TableFaker(object):
         """Generate fake data as tabular data.
 
         Args:
-            provider_list (list): List of provider names to generate a tabular data.
-            rows (int): Number of rows in the tabular data.
+            provider_list (list):
+                List of provider names to generate a tabular data.
+            rows (int):
+                Number of rows in the tabular data.
+            header_list (list):
+                List of header names.
 
         Returns:
             tabledata.TableData: Generated fake tabular data.
