@@ -36,9 +36,9 @@ class TableFaker(object):
             raise ValueError("invalid rows")
 
         return TableData(
-            table_name=table_name,
-            header_list=header_list if header_list else provider_list,
-            row_list=[
+            table_name,
+            header_list if header_list else provider_list,
+            [
                 [getattr(self.__fake, faker_name)() for faker_name in provider_list]
                 for _row in range(rows)
             ],
