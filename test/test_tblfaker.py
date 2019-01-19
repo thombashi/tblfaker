@@ -81,10 +81,10 @@ class Test_TableFaker_generate(object):
         faker = TableFaker(seed=1)
         provider_list = ("file_name", "file_path")
         out = faker.generate(
-            provider_list, 1, table_name="with header_list", header_list=("input", "output")
+            provider_list, 1, table_name="with headers", headers=("input", "output")
         )
         expected = TableData(
-            "with header_list", ("input", "output"), [("shake.wav", "/prepare/last.jpeg")]
+            "with headers", ("input", "output"), [("shake.wav", "/prepare/last.jpeg")]
         )
         out_table = dump_tabledata(out, **dump_opts)
         expected_table = dump_tabledata(expected, **dump_opts)
@@ -121,7 +121,7 @@ class Test_TableFaker_generate(object):
             lhs = faker.generate(providers, rows)
             rhs = faker.generate(providers, rows)
 
-            assert lhs.header_list == rhs.header_list
+            assert lhs.headers == rhs.headers
             assert lhs != rhs
 
     @pytest.mark.parametrize(
