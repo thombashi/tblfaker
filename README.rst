@@ -104,7 +104,7 @@ Fake tabular data can reproduce by passing the same ``seed`` value to ``TableFak
         Row(name='Dr. Jared Ortega', address='517 Rodriguez Divide Suite 570\nWest Melinda, NH 85325')
 
 
-Set Locale
+Set locale for fake data
 --------------------------------------------
 :Sample Code:
     .. code-block:: python
@@ -125,10 +125,10 @@ Set Locale
         Row(name='宇野 くみ子', address='宮城県八街市西浅草20丁目24番6号')
 
 
-Output with Other Data Formats
+Generate data in other data formats
 --------------------------------------------
 
-JSON
+Generate data in dict
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :Sample Code:
     .. code-block:: python
@@ -156,7 +156,7 @@ JSON
             ]
         }
 
-pandas dataframe
+Generate data in pandas.DataFrame
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :Sample Code:
     .. code-block:: python
