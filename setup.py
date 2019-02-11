@@ -77,7 +77,6 @@ setuptools.setup(
 
     classifiers=[
         "Development Status :: 3 - Alpha",
-        "Environment :: Console",
         "Intended Audience :: Developers",
         "Intended Audience :: Information Technology",
         "License :: OSI Approved :: MIT License",
