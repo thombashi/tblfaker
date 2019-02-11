@@ -8,6 +8,7 @@ build:
 	@make clean
 	@python setup.py build
 	@rm -rf $(BUILD_DIR)/
+	@twine check dist/*
 
 .PHONY: clean
 clean:
