@@ -13,6 +13,7 @@ _non_provider_methods = (
     "add_provider",
     "format",
     "get_formatter",
+    "get_providers",
     "parse",
     "provider",
     "seed",

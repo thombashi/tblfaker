@@ -91,7 +91,6 @@ def test_get_providers():
             "free_email_domain",
             "future_date",
             "future_datetime",
-            "get_providers",
             "hex_color",
             "hexify",
             "hostname",
