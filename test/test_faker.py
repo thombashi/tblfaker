@@ -146,8 +146,10 @@ def test_get_providers():
             "past_datetime",
             "phone_number",
             "postalcode",
+            "postalcode_in_state",
             "postalcode_plus4",
             "postcode",
+            "postcode_in_state",
             "prefix",
             "prefix_female",
             "prefix_male",
@@ -224,6 +226,7 @@ def test_get_providers():
             "words",
             "year",
             "zipcode",
+            "zipcode_in_state",
             "zipcode_plus4",
         ]
     )
