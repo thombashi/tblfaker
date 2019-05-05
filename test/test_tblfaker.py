@@ -4,7 +4,7 @@ from __future__ import print_function, unicode_literals
 
 import pytest
 import six  # noqa
-from pytablewriter import dump_tabledata
+from pytablewriter import dumps_tabledata
 from tabledata import TableData
 from tblfaker import TableFaker
 
@@ -68,8 +68,8 @@ class Test_TableFaker_generate(object):
     def test_normal(self, provider_list, rows, table_name, expected):
         faker = TableFaker(seed=1)
         out = faker.generate(provider_list, rows, table_name=table_name)
-        out_table = dump_tabledata(out, **dump_opts)
-        expected_table = dump_tabledata(expected, **dump_opts)
+        out_table = dumps_tabledata(out, **dump_opts)
+        expected_table = dumps_tabledata(expected, **dump_opts)
 
         print_test_result(expected=expected_table, actual=out_table)
 
@@ -86,8 +86,8 @@ class Test_TableFaker_generate(object):
         expected = TableData(
             "with headers", ("input", "output"), [("shake.wav", "/prepare/last.jpeg")]
         )
-        out_table = dump_tabledata(out, **dump_opts)
-        expected_table = dump_tabledata(expected, **dump_opts)
+        out_table = dumps_tabledata(out, **dump_opts)
+        expected_table = dumps_tabledata(expected, **dump_opts)
 
         print_test_result(expected=expected_table, actual=out_table)
 
@@ -103,8 +103,8 @@ class Test_TableFaker_generate(object):
             ("name", "address"),
             [("山岸 裕樹", "三重県荒川区明石町14丁目4番16号"), ("村山 拓真", "北海道荒川区白金台15丁目19番4号 コート所野806")],
         )
-        out_table = dump_tabledata(out, **dump_opts)
-        expected_table = dump_tabledata(expected, **dump_opts)
+        out_table = dumps_tabledata(out, **dump_opts)
+        expected_table = dumps_tabledata(expected, **dump_opts)
 
         print_test_result(expected=expected_table, actual=out_table)
 
