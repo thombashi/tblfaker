@@ -1,3 +1,2 @@
 pytablewriter>=0.46
 pytest
-six

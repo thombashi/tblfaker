@@ -1,9 +1,4 @@
-# encoding: utf-8
-
-from __future__ import print_function, unicode_literals
-
 import pytest
-import six  # noqa
 from pytablewriter import dumps_tabledata
 from tabledata import TableData
 
@@ -15,8 +10,7 @@ from ._common import print_test_result
 dump_opts = {"line_break_handling": "escape"}
 
 
-class Test_TableFaker_generate(object):
-    @pytest.mark.skipif("six.PY2")
+class Test_TableFaker_generate:
     @pytest.mark.parametrize(
         ["provider_list", "rows", "table_name", "expected"],
         [
@@ -77,7 +71,6 @@ class Test_TableFaker_generate(object):
         assert expected_table == out_table
         assert out == expected
 
-    @pytest.mark.skipif("six.PY2")
     def test_normal_specify_header_list(self):
         faker = TableFaker(seed=1)
         provider_list = ("file_name", "file_path")
@@ -95,7 +88,6 @@ class Test_TableFaker_generate(object):
         assert expected_table == out_table
         assert out == expected
 
-    @pytest.mark.skipif("six.PY2")
     def test_normal_locale(self):
         faker = TableFaker(locale="ja_JP", seed=1)
         out = faker.generate(("name", "address"), rows=2)

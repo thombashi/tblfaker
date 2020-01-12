@@ -1,14 +1,10 @@
-# encoding: utf-8
-
-from __future__ import absolute_import, unicode_literals
-
 from faker import Factory
 from tabledata import TableData
 
 from ._common import get_providers
 
 
-class TableFaker(object):
+class TableFaker:
     def __init__(self, locale=None, seed=None):
         self.__fake = Factory.create(locale)
 
