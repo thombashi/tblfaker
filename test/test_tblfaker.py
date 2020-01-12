@@ -12,7 +12,7 @@ dump_opts = {"line_break_handling": "escape"}
 
 class Test_TableFaker_generate:
     @pytest.mark.parametrize(
-        ["provider_list", "rows", "table_name", "expected"],
+        ["providers", "rows", "table_name", "expected"],
         [
             [
                 ("name", "address"),
@@ -60,9 +60,9 @@ class Test_TableFaker_generate:
             ],
         ],
     )
-    def test_normal(self, provider_list, rows, table_name, expected):
+    def test_normal(self, providers, rows, table_name, expected):
         faker = TableFaker(seed=1)
-        out = faker.generate(provider_list, rows, table_name=table_name)
+        out = faker.generate(providers, rows, table_name=table_name)
         out_table = dumps_tabledata(out, **dump_opts)
         expected_table = dumps_tabledata(expected, **dump_opts)
 
@@ -73,10 +73,8 @@ class Test_TableFaker_generate:
 
     def test_normal_specify_header_list(self):
         faker = TableFaker(seed=1)
-        provider_list = ("file_name", "file_path")
-        out = faker.generate(
-            provider_list, 1, table_name="with headers", headers=("input", "output")
-        )
+        providers = ("file_name", "file_path")
+        out = faker.generate(providers, 1, table_name="with headers", headers=("input", "output"))
         expected = TableData(
             "with headers", ("input", "output"), [("shake.wav", "/prepare/last.jpeg")]
         )
@@ -118,11 +116,11 @@ class Test_TableFaker_generate:
             assert lhs != rhs
 
     @pytest.mark.parametrize(
-        ["provider_list", "rows", "expected"],
+        ["providers", "rows", "expected"],
         [[["invalid provider"], 1, ValueError], [["name"], -1, ValueError]],
     )
-    def test_exception(self, provider_list, rows, expected):
+    def test_exception(self, providers, rows, expected):
         faker = TableFaker()
 
         with pytest.raises(expected):
-            faker.generate(provider_list, rows)
+            faker.generate(providers, rows)
