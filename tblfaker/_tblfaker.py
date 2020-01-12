@@ -15,7 +15,7 @@ class TableFaker:
 
     def generate(
         self,
-        provider_list: Sequence[str],
+        providers: Sequence[str],
         rows: int,
         table_name: Optional[str] = None,
         headers: Optional[Sequence[str]] = None,
@@ -23,7 +23,7 @@ class TableFaker:
         """Generate fake data as tabular data.
 
         Args:
-            provider_list:
+            providers:
                 List of provider names to generate a tabular data.
             rows:
                 Number of rows in the tabular data.
@@ -34,26 +34,26 @@ class TableFaker:
             tabledata.TableData: Generated fake tabular data.
         """
 
-        self.__validate_provider(provider_list)
+        self.__validate_provider(providers)
 
         if rows < 0:
             raise ValueError("invalid rows")
 
         return TableData(
             table_name,
-            headers if headers else provider_list,
+            headers if headers else providers,
             [
-                [getattr(self.__fake, faker_name)() for faker_name in provider_list]
+                [getattr(self.__fake, faker_name)() for faker_name in providers]
                 for _row in range(rows)
             ],
         )
 
     @staticmethod
-    def __validate_provider(provider_list: Sequence[str]) -> None:
-        if not provider_list:
+    def __validate_provider(providers: Sequence[str]) -> None:
+        if not providers:
             raise ValueError("require provider(s)")
 
-        diff = set(provider_list) - get_providers()
+        diff = set(providers) - get_providers()
 
         if diff:
             raise ValueError("unknown providers found: {}".format(diff))
