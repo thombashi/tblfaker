@@ -1,4 +1,5 @@
 import inspect
+from typing import AbstractSet, Sequence
 
 from faker import Factory
 
@@ -17,7 +18,7 @@ _non_provider_methods = (
 )
 
 
-def _get_valid_providers():
+def _get_valid_providers() -> Sequence[str]:
     return tuple(
         method[0]
         for method in inspect.getmembers(Factory.create(), inspect.ismethod)
@@ -75,9 +76,9 @@ _valid_locals = frozenset(
 )
 
 
-def get_providers():
+def get_providers() -> AbstractSet:
     return _valid_providers
 
 
-def get_locals():
+def get_locals() -> AbstractSet:
     return _valid_locals
