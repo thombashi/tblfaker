@@ -59,6 +59,7 @@ setuptools.setup(
     keywords=["table", "faker"],
     license=pkg_info["__license__"],
     long_description=LONG_DESCRIPTION,
+    long_description_content_type="text/x-rst",
     packages=setuptools.find_packages(exclude=["test*"]),
     project_urls={
         "Source": REPOSITORY_URL,
