@@ -51,7 +51,6 @@ setuptools.setup(
     name=MODULE_NAME,
     version=pkg_info["__version__"],
     url=REPOSITORY_URL,
-
     author=pkg_info["__author__"],
     author_email=pkg_info["__email__"],
     description="tblfaker is a Python library to generate fake tabular data.",
@@ -61,11 +60,7 @@ setuptools.setup(
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/x-rst",
     packages=setuptools.find_packages(exclude=["test*"]),
-    project_urls={
-        "Source": REPOSITORY_URL,
-        "Tracker": "{:s}/issues".format(REPOSITORY_URL),
-    },
-
+    project_urls={"Source": REPOSITORY_URL, "Tracker": "{:s}/issues".format(REPOSITORY_URL)},
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
     install_requires=SETUPTOOLS_REQUIRES + INSTALL_REQUIRES,
     setup_requires=SETUPTOOLS_REQUIRES + PYTEST_RUNNER_REQUIRES,
@@ -74,7 +69,6 @@ setuptools.setup(
         "dev": ["releasecmd>=0.2.0,<1", "twine", "wheel"] + TESTS_REQUIRES,
         "test": TESTS_REQUIRES,
     },
-
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
@@ -92,4 +86,5 @@ setuptools.setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Software Development :: Testing",
     ],
-    cmdclass=cmdclass)
+    cmdclass=cmdclass,
+)

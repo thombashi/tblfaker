@@ -6,6 +6,7 @@ import pytest
 import six  # noqa
 from pytablewriter import dumps_tabledata
 from tabledata import TableData
+
 from tblfaker import TableFaker
 
 from ._common import print_test_result

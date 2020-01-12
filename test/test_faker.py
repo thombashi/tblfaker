@@ -4,6 +4,7 @@ from __future__ import print_function, unicode_literals
 
 import pytest
 from faker import Factory
+
 from tblfaker import get_locals, get_providers
 
 
