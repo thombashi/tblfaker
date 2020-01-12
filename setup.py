@@ -13,8 +13,11 @@ ENCODING = "utf8"
 pkg_info = {}  # type: Dict[str, str]
 
 
-def need_pytest():
-    return set(["pytest", "test", "ptr"]).intersection(sys.argv)
+def pytest_runner_requires() -> List[str]:
+    if set(["pytest", "test", "ptr"]).intersection(sys.argv):
+        return ["pytest-runner"]
+
+    return []
 
 
 def get_release_command_class():
@@ -39,7 +42,6 @@ with open(os.path.join(REQUIREMENT_DIR, "test_requirements.txt")) as f:
     TESTS_REQUIRES = [line.strip() for line in f if line.strip()]
 
 SETUPTOOLS_REQUIRES = ["setuptools>=38.3.0"]
-PYTEST_RUNNER_REQUIRES = ["pytest-runner"] if need_pytest() else []
 
 setuptools.setup(
     name=MODULE_NAME,
@@ -57,7 +59,7 @@ setuptools.setup(
     project_urls={"Source": REPOSITORY_URL, "Tracker": "{:s}/issues".format(REPOSITORY_URL)},
     python_requires=">=3.5",
     install_requires=SETUPTOOLS_REQUIRES + INSTALL_REQUIRES,
-    setup_requires=SETUPTOOLS_REQUIRES + PYTEST_RUNNER_REQUIRES,
+    setup_requires=SETUPTOOLS_REQUIRES + pytest_runner_requires(),
     tests_require=TESTS_REQUIRES,
     extras_require={
         "dev": ["releasecmd>=0.2.0,<1", "twine", "wheel"] + TESTS_REQUIRES,
