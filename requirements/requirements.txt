@@ -1,2 +1,2 @@
-Faker>=1.0.8,<4.0.0
-tabledata>=0.9.1,<2
+Faker>=1.0.8,<5
+tabledata>=0.10.0,<2
