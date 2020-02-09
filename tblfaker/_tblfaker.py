@@ -31,7 +31,7 @@ class TableFaker:
             headers:
                 List of header names.
             max_workers:
-                Max workers to generate table data.
+                Maximum number of workers to generate table data.
 
         Returns:
             tabledata.TableData: Generated fake tabular data.
