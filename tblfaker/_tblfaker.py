@@ -19,6 +19,7 @@ class TableFaker:
         rows: int,
         table_name: Optional[str] = None,
         headers: Optional[Sequence[str]] = None,
+        max_workers: Optional[int] = None,
     ) -> TableData:
         """Generate fake data as tabular data.
 
@@ -29,6 +30,8 @@ class TableFaker:
                 Number of rows in the tabular data.
             headers:
                 List of header names.
+            max_workers:
+                Max workers to generate table data.
 
         Returns:
             tabledata.TableData: Generated fake tabular data.
@@ -46,6 +49,7 @@ class TableFaker:
                 [getattr(self.__fake, faker_name)() for faker_name in providers]
                 for _row in range(rows)
             ],
+            max_workers=max_workers,
         )
 
     @staticmethod
