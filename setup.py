@@ -1,5 +1,4 @@
 import os.path
-import sys
 from typing import Dict, List  # noqa
 
 import setuptools
@@ -11,13 +10,6 @@ REQUIREMENT_DIR = "requirements"
 ENCODING = "utf8"
 
 pkg_info = {}  # type: Dict[str, str]
-
-
-def pytest_runner_requires() -> List[str]:
-    if set(["pytest", "test", "ptr"]).intersection(sys.argv):
-        return ["pytest-runner"]
-
-    return []
 
 
 def get_release_command_class():
@@ -59,8 +51,6 @@ setuptools.setup(
     project_urls={"Source": REPOSITORY_URL, "Tracker": "{:s}/issues".format(REPOSITORY_URL)},
     python_requires=">=3.5",
     install_requires=SETUPTOOLS_REQUIRES + INSTALL_REQUIRES,
-    setup_requires=SETUPTOOLS_REQUIRES + pytest_runner_requires(),
-    tests_require=TESTS_REQUIRES,
     extras_require={
         "dev": ["releasecmd>=0.2.0,<1", "twine", "wheel"] + TESTS_REQUIRES,
         "test": TESTS_REQUIRES,
