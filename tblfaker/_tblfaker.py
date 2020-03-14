@@ -10,7 +10,7 @@ class TableFaker:
     def __init__(self, locale: Optional[str] = None, seed: Optional[int] = None) -> None:
         self.__fake = Factory.create(locale)
 
-        if seed:
+        if seed is not None:
             self.__fake.seed(seed)
 
     def generate(
