@@ -76,9 +76,9 @@ _valid_locals = frozenset(
 )
 
 
-def get_providers() -> AbstractSet:
+def get_providers() -> AbstractSet[str]:
     return _valid_providers
 
 
-def get_locals() -> AbstractSet:
+def get_locals() -> AbstractSet[str]:
     return _valid_locals
