@@ -74,6 +74,7 @@ def test_get_providers():
             "date_time_this_month",
             "date_time_this_year",
             "day_of_month",
+            "dga",
             "day_of_week",
             "domain_name",
             "domain_word",
