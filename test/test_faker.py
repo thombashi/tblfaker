@@ -12,7 +12,7 @@ def test_smoke_providers():
 
 
 def test_get_providers():
-    assert get_providers() == frozenset(
+    expected = frozenset(
         [
             "address",
             "am_pm",
@@ -246,6 +246,7 @@ def test_get_providers():
             "zipcode_plus4",
         ]
     )
+    assert expected.issubset(get_providers())
 
 
 @pytest.mark.parametrize(["value"], [[l] for l in get_locals()])
