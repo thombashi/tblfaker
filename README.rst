@@ -186,7 +186,5 @@ Installation
 
 Dependencies
 ============================================
-Python 3.5+
-
-- `faker <https://github.com/joke2k/faker>`__
-- `tabledata <https://github.com/thombashi/tabledata>`__
+- Python 3.5+
+- `Python package dependencies (automatically installed) <https://github.com/thombashi/tblfaker/network/dependencies>`__
