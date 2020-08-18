@@ -249,6 +249,6 @@ def test_get_providers():
     assert expected.issubset(get_providers())
 
 
-@pytest.mark.parametrize(["value"], [[l] for l in get_locals()])
+@pytest.mark.parametrize(["value"], [[local] for local in get_locals()])
 def test_smoke_locals(value):
     assert Factory.create(value).name()
