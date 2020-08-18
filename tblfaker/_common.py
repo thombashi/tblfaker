@@ -1,20 +1,18 @@
 import inspect
+import re
 from typing import AbstractSet, Sequence
 
 from faker import Factory
 
 
+_non_provider_regexp = re.compile("^(add|del|get|set)_[a-z_]+")
 _non_provider_methods = (
     "__init__",
     "_Generator__format_token",
-    "add_provider",
     "format",
-    "get_formatter",
-    "get_providers",
     "parse",
     "provider",
     "seed",
-    "set_formatter",
 )
 
 
@@ -22,7 +20,7 @@ def _get_valid_providers() -> Sequence[str]:
     return tuple(
         method[0]
         for method in inspect.getmembers(Factory.create(), inspect.ismethod)
-        if method[0] not in _non_provider_methods
+        if _non_provider_regexp.search(method[0]) is None and method[0] not in _non_provider_methods
     )
 
 
