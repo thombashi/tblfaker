@@ -1,3 +1,4 @@
 Faker>=4.0.3
 pytablewriter>=0.46
 pytest>=6.0.1
+pytest-md-report>=0.1
