@@ -1,4 +1,4 @@
-Faker>=4.0.3
+Faker>=5
 pytablewriter>=0.46
 pytest>=6.0.1
 pytest-discord>=0.0.5

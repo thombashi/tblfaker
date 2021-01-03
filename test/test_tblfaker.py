@@ -92,7 +92,7 @@ class Test_TableFaker_generate:
         expected = TableData(
             None,
             ("name", "address"),
-            [("山岸 裕樹", "三重県荒川区明石町14丁目4番16号"), ("村山 拓真", "北海道荒川区白金台15丁目19番4号 コート所野806")],
+            [("近藤 裕樹", "三重県荒川区明石町14丁目4番16号"), ("村上 拓真", "北海道荒川区白金台15丁目19番4号 コート所野806")],
         )
         out_table = dumps_tabledata(out, **dump_opts)
         expected_table = dumps_tabledata(expected, **dump_opts)
