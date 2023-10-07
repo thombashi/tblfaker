@@ -15,17 +15,31 @@ tblfaker is a Python library to generate fake tabular data.
     :target: https://pypi.org/project/tblfaker
     :alt: Supported Python versions
 
-.. image:: https://img.shields.io/travis/thombashi/tblfaker/master.svg?label=Linux/macOS%20CI
-    :target: https://travis-ci.org/thombashi/tblfaker
-    :alt: Linux/macOS CI status
-
-.. image:: https://img.shields.io/appveyor/ci/thombashi/tblfaker/master.svg?label=Windows%20CI
-    :target: https://ci.appveyor.com/project/thombashi/tblfaker/branch/master
-    :alt: Windows CI status
+.. image:: https://github.com/thombashi/tblfaker/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/thombashi/tblfaker/actions/workflows/ci.yml
+    :alt: CI status of Linux/macOS/Windows
 
 .. image:: https://coveralls.io/repos/github/thombashi/tblfaker/badge.svg?branch=master
     :target: https://coveralls.io/github/thombashi/tblfaker?branch=master
     :alt: Test coverage
+
+.. image:: https://github.com/thombashi/tblfaker/actions/workflows/github-code-scanning/codeql/badge.svg
+    :target: https://github.com/thombashi/tblfaker/actions/workflows/github-code-scanning/codeql
+    :alt: CodeQL
+
+
+Installation
+============================================
+::
+
+    pip install tblfaker
+
+
+Install all the extra dependencies:
+
+::
+
+    pip install tblfaker[all]
 
 
 Usage
@@ -67,7 +81,7 @@ Generate tabular data at random
         Row(name='Nicholas Miller', address='59845 Daniel Ford Suite 729\nDamontown, UT 19811
 
 
-Reproduce same tabular data
+Reproduce the same tabular data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Fake tabular data can reproduce by passing the same ``seed`` value to ``TableFaker`` constructor.
 
@@ -177,14 +191,7 @@ Generate data in pandas.DataFrame
         3  Dr. Jared Ortega  517 Rodriguez Divide Suite 570\nWest Melinda, ...
 
 
-Installation
-============================================
-::
-
-    pip install tblfaker
-
-
 Dependencies
 ============================================
-- Python 3.5+
+- Python 3.8+
 - `Python package dependencies (automatically installed) <https://github.com/thombashi/tblfaker/network/dependencies>`__
