@@ -1,9 +1,8 @@
 [build-system]
-requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61.0"]
 
 [tool.black]
-line-length = 100
 exclude = '''
 .eggs/
 | .git/
@@ -16,47 +15,48 @@ exclude = '''
 | docs/conf.py
 | setup.py
 '''
+line-length = 100
 
 [tool.isort]
-known_third_party = [
-    'pytablewriter',
-    'pytest',
-]
 include_trailing_comma = true
+known_third_party = [
+  'pytablewriter',
+  'pytest',
+]
 line_length = 100
 lines_after_imports = 2
 multi_line_output = 3
 skip_glob = [
-    '*/.eggs/*',
-    '*/.pytype/*',
-    '*/.tox/*',
+  '*/.eggs/*',
+  '*/.pytype/*',
+  '*/.tox/*',
 ]
 
 [tool.coverage.run]
-source = ['tblfaker']
 branch = true
+source = ['tblfaker']
 
 [tool.coverage.report]
-show_missing = true
-precision = 1
 exclude_lines = [
-    'except ImportError',
-    'raise NotImplementedError',
-    'pass',
-    'ABCmeta',
-    'abstractmethod',
-    'abstractproperty',
-    'abstractclassmethod',
-    'warnings.warn',
+  'except ImportError',
+  'raise NotImplementedError',
+  'pass',
+  'ABCmeta',
+  'abstractmethod',
+  'abstractproperty',
+  'abstractclassmethod',
+  'warnings.warn',
 ]
+precision = 1
+show_missing = true
 
 [tool.pytest.ini_options]
 testpaths = [
-    "test",
+  "test",
 ]
 
 md_report = true
-md_report_verbose = 0
 md_report_color = "auto"
+md_report_verbose = 0
 
 discord_verbose = 1
