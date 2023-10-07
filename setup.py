@@ -33,6 +33,11 @@ with open(os.path.join(REQUIREMENT_DIR, "requirements.txt")) as f:
 with open(os.path.join(REQUIREMENT_DIR, "test_requirements.txt")) as f:
     TESTS_REQUIRES: Final[List[str]] = [line.strip() for line in f if line.strip()]
 
+all_requires: Final[List[str]] = [
+    "Pillow>=8,<11",
+    "xmltodict",
+]
+
 setuptools.setup(
     name=MODULE_NAME,
     version=pkg_info["__version__"],
@@ -53,7 +58,10 @@ setuptools.setup(
     },
     python_requires=">=3.8",
     install_requires=INSTALL_REQUIRES,
-    extras_require={"test": TESTS_REQUIRES},
+    extras_require={
+        "all": all_requires,
+        "test": all_requires + TESTS_REQUIRES,
+    },
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
