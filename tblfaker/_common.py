@@ -7,8 +7,9 @@ from faker import Factory
 
 _non_provider_regexp: Final = re.compile("^(add|del|get|set)_[a-z_]+")
 _non_provider_methods: Final = (
-    "__init__",
     "__delattr__",
+    "__eq__",
+    "__init__",
     "_Generator__format_token",
     "format",
     "parse",
