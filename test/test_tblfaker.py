@@ -92,7 +92,10 @@ class Test_TableFaker_generate:
         expected = TableData(
             None,
             ("name", "address"),
-            [("近藤 裕樹", "三重県荒川区明石町14丁目4番16号"), ("村上 拓真", "北海道荒川区白金台15丁目19番4号 コート所野806")],
+            [
+                ("木村 陽一", "石川県香取市台東29丁目16番13号"),
+                ("鈴木 晃", "兵庫県狛江市丹勢29丁目9番8号 南郷屋パーク008"),
+            ],
         )
         out_table = dumps_tabledata(out, **dump_opts)
         expected_table = dumps_tabledata(expected, **dump_opts)
@@ -117,7 +120,10 @@ class Test_TableFaker_generate:
 
     @pytest.mark.parametrize(
         ["providers", "rows", "expected"],
-        [[["invalid provider"], 1, ValueError], [["name"], -1, ValueError]],
+        [
+            [["invalid provider"], 1, ValueError],
+            [["name"], -1, ValueError],
+        ],
     )
     def test_exception(self, providers, rows, expected):
         faker = TableFaker()
