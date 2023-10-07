@@ -61,4 +61,4 @@ class TableFaker:
         diff = set(providers) - get_providers()
 
         if diff:
-            raise ValueError("unknown providers found: {}".format(diff))
+            raise ValueError(f"unknown providers found: {diff}")
