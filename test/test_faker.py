@@ -1,13 +1,24 @@
+import enum
+
 import pytest
 from faker import Factory
 
 from tblfaker import get_locals, get_providers
 
 
+class DummyEnum(enum.Enum):
+    FOO = "foo"
+    BAR = "bar"
+
+
 def test_smoke_providers():
     fake = Factory.create()
 
     for provider in get_providers():
+        if provider == "enum":
+            getattr(fake, provider)(DummyEnum)
+            continue
+
         getattr(fake, provider)()
 
 

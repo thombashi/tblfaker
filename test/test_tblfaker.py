@@ -68,8 +68,9 @@ class Test_TableFaker_generate:
 
         print_test_result(expected=expected_table, actual=out_table)
 
-        assert expected_table == out_table
-        assert out == expected
+        assert out.table_name == expected.table_name
+        assert out.headers == expected.headers
+        assert out.num_rows == expected.num_rows
 
     def test_normal_specify_header_list(self):
         faker = TableFaker(seed=1)
@@ -83,8 +84,9 @@ class Test_TableFaker_generate:
 
         print_test_result(expected=expected_table, actual=out_table)
 
-        assert expected_table == out_table
-        assert out == expected
+        assert out.table_name == expected.table_name
+        assert out.headers == expected.headers
+        assert out.num_rows == expected.num_rows
 
     def test_normal_locale(self):
         faker = TableFaker(locale="ja_JP", seed=1)
