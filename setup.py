@@ -67,6 +67,7 @@ setuptools.setup(
         "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Software Development :: Testing",
+        "Typing :: Typed",
     ],
     cmdclass=get_release_command_class(),
 )
