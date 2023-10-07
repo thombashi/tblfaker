@@ -1,12 +1,12 @@
 import inspect
 import re
-from typing import AbstractSet, Sequence
+from typing import AbstractSet, Final, Sequence
 
 from faker import Factory
 
 
-_non_provider_regexp = re.compile("^(add|del|get|set)_[a-z_]+")
-_non_provider_methods = (
+_non_provider_regexp: Final = re.compile("^(add|del|get|set)_[a-z_]+")
+_non_provider_methods: Final = (
     "__init__",
     "_Generator__format_token",
     "format",
@@ -24,8 +24,8 @@ def _get_valid_providers() -> Sequence[str]:
     )
 
 
-_valid_providers = frozenset(_get_valid_providers())
-_valid_locals = frozenset(
+_valid_providers: Final = frozenset(_get_valid_providers())
+_valid_locals: Final = frozenset(
     [
         "ar_EG",
         "ar_PS",

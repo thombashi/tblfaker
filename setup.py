@@ -1,18 +1,18 @@
 import os.path
-from typing import Dict
+from typing import Dict, Final, List, Type
 
 import setuptools
 
 
-MODULE_NAME = "tblfaker"
-REPOSITORY_URL = f"https://github.com/thombashi/{MODULE_NAME:s}"
-REQUIREMENT_DIR = "requirements"
-ENCODING = "utf8"
+MODULE_NAME: Final = "tblfaker"
+REPOSITORY_URL: Final = f"https://github.com/thombashi/{MODULE_NAME:s}"
+REQUIREMENT_DIR: Final = "requirements"
+ENCODING: Final = "utf8"
 
-pkg_info = {}  # type: Dict[str, str]
+pkg_info: Dict[str, str] = {}
 
 
-def get_release_command_class() -> Dict[str, setuptools.Command]:
+def get_release_command_class() -> Dict[str, Type[setuptools.Command]]:
     try:
         from releasecmd import ReleaseCommand
     except ImportError:
@@ -25,13 +25,13 @@ with open(os.path.join(MODULE_NAME, "__version__.py")) as f:
     exec(f.read(), pkg_info)
 
 with open("README.rst", encoding=ENCODING) as f:
-    LONG_DESCRIPTION = f.read()
+    LONG_DESCRIPTION: Final[str] = f.read()
 
 with open(os.path.join(REQUIREMENT_DIR, "requirements.txt")) as f:
-    INSTALL_REQUIRES = [line.strip() for line in f if line.strip()]
+    INSTALL_REQUIRES: Final[List[str]] = [line.strip() for line in f if line.strip()]
 
 with open(os.path.join(REQUIREMENT_DIR, "test_requirements.txt")) as f:
-    TESTS_REQUIRES = [line.strip() for line in f if line.strip()]
+    TESTS_REQUIRES: Final[List[str]] = [line.strip() for line in f if line.strip()]
 
 setuptools.setup(
     name=MODULE_NAME,
