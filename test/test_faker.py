@@ -1,4 +1,5 @@
 import enum
+import sys
 
 import pytest
 from faker import Factory
@@ -14,7 +15,10 @@ class DummyEnum(enum.Enum):
 def test_smoke_providers():
     fake = Factory.create()
 
-    for provider in get_providers():
+    providers = get_providers()
+    print(providers, file=sys.stderr)
+
+    for provider in providers:
         if provider == "enum":
             getattr(fake, provider)(DummyEnum)
             continue
